@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Last Minute Life Saver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <img src="assets/emergency-icon.svg" alt="Life Saver icon" />
+          <div>
+            <p class="eyebrow">Emergency support</p>
+            <h1>The Last Minute Life Saver</h1>
+          </div>
+        </div>
+        <div class="status-pill">
+          <span class="dot"></span>
+          Ready
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="hero card">
+          <div>
+            <p class="label">Today</p>
+            <h2 id="dateText">Loading...</h2>
+            <p id="timeText" class="time-text"></p>
+          </div>
+          <button class="primary-btn" id="quickActionBtn">Add quick reminder</button>
+        </section>
+
+        <section class="stats-grid">
+          <article class="card stat">
+            <p>Urgent tasks</p>
+            <strong id="taskCount">3</strong>
+          </article>
+          <article class="card stat">
+            <p>Checklist done</p>
+            <strong id="checkDoneCount">2/5</strong>
+          </article>
+          <article class="card stat">
+            <p>Safety score</p>
+            <strong>86%</strong>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="card panel">
+            <div class="section-title">
+              <h3>Priority checklist</h3>
+              <span>Before you rush</span>
+            </div>
+            <ul class="checklist" id="checklist">
+              <li><input type="checkbox" checked /> Phone battery charged</li>
+              <li><input type="checkbox" checked /> Emergency contact saved</li>
+              <li><input type="checkbox" /> Documents ready</li>
+              <li><input type="checkbox" /> Water and essentials packed</li>
+              <li><input type="checkbox" /> Transport plan confirmed</li>
+            </ul>
+          </article>
+
+          <article class="card panel">
+            <div class="section-title">
+              <h3>Quick actions</h3>
+              <span>Important tasks</span>
+            </div>
+            <div class="task-list" id="taskList">
+              <div class="task-item">
+                <div>
+                  <h4>Call family</h4>
+                  <p>Confirm location and status</p>
+                </div>
+                <span class="tag urgent">Urgent</span>
+              </div>
+              <div class="task-item">
+                <div>
+                  <h4>Pack essentials</h4>
+                  <p>Travel kit and documents</p>
+                </div>
+                <span class="tag warning">Soon</span>
+              </div>
+              <div class="task-item">
+                <div>
+                  <h4>Review plan</h4>
+                  <p>Check timings and routes</p>
+                </div>
+                <span class="tag normal">Normal</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="card countdown-panel">
+          <div class="section-title">
+            <h3>Countdowns</h3>
+            <span>Time-sensitive reminders</span>
+          </div>
+          <div class="countdown-grid">
+            <div class="countdown-box">
+              <span class="value">02</span>
+              <span class="label">Hours</span>
+            </div>
+            <div class="countdown-box">
+              <span class="value">18</span>
+              <span class="label">Minutes</span>
+            </div>
+            <div class="countdown-box">
+              <span class="value">45</span>
+              <span class="label">Seconds</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
