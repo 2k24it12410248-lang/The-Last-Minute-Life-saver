@@ -1,31 +1,27 @@
 # The Last Minute Life Saver
 
-A simple emergency-ready dashboard that helps users stay prepared before a deadline, travel, or urgent situation.
+A polished emergency-preparedness landing page and dashboard built as a static GitHub Pages-ready website.
+
+## Live preview
+
+After enabling GitHub Pages in the repo settings, the site will be available at:
+
+https://2k24it12410248-lang.github.io/The-Last-Minute-Life-saver/
 
 ## Features
 
-- Daily emergency checklist
-- Quick access to important actions
-- Countdown cards for urgent tasks
-- Auto-updating current date and time
-- Simple, mobile-friendly interface
-
-## Project Structure
-
-```text
-The-Last-Minute-Life-saver/
-├── README.md
-├── index.html
-├── styles.css
-├── app.js
-├── assets/
-│   └── emergency-icon.svg
-└── .gitignore
-```
+- Emergency dashboard layout
+- Quick action cards
+- Interactive checklist with live task counting
+- Live date/time display
+- Countdown widgets
+- Emergency contact section
+- Mobile-friendly responsive design
+- Ready for GitHub Pages deployment
 
 ## Run locally
 
-Because this is a simple frontend project, you can open `index.html` directly in a browser, or run a local server:
+Open the file directly in a browser, or use a local web server:
 
 ```bash
 python -m http.server 8000
@@ -40,10 +36,15 @@ http://localhost:8000
 ## Files
 
 - `index.html` — page structure
-- `styles.css` — styling and layout
-- `app.js` — UI logic and interactive behavior
-- `assets/emergency-icon.svg` — project icon
+- `styles.css` — layout and design
+- `app.js` — interactive logic
+- `assets/emergency-icon.svg` — branding asset
 
-## Goal
+## GitHub Pages setup
 
-This project is a clean starting point for an emergency planning or last-minute task support experience.
+1. Open the repository on GitHub.
+2. Go to `Settings` > `Pages`.
+3. Set source to `Deploy from a branch`.
+4. Choose branch `main` and folder `/root`.
+5. Save.
+6. Wait a few minutes, then open the generated URL.

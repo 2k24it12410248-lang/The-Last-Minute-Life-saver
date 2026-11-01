@@ -3,122 +3,241 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Last Minute Life Saver is a simple emergency preparedness dashboard for urgent planning and quick action."
+    />
     <title>The Last Minute Life Saver</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar">
+    <div class="background-blur blur-one"></div>
+    <div class="background-blur blur-two"></div>
+
+    <header class="site-header">
+      <div class="container nav">
         <div class="brand">
-          <img src="assets/emergency-icon.svg" alt="Life Saver icon" />
+          <div class="brand-mark">
+            <img src="assets/emergency-icon.svg" alt="Emergency icon" />
+          </div>
           <div>
-            <p class="eyebrow">Emergency support</p>
+            <span class="eyebrow">Emergency support</span>
             <h1>The Last Minute Life Saver</h1>
           </div>
         </div>
-        <div class="status-pill">
-          <span class="dot"></span>
-          Ready
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#overview">Overview</a>
+          <a href="#checklist">Checklist</a>
+          <a href="#priority">Priority</a>
+          <a href="#contacts">Contacts</a>
+        </nav>
+
+        <button class="primary-button">Need help now</button>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section class="hero card" id="overview">
+        <div class="hero-copy">
+          <span class="badge">Prepared for urgent moments</span>
+          <h2>Stay organized when time is running out.</h2>
+          <p>
+            Keep your essentials ready, review your action plan, and move fast when a
+            last-minute situation hits.
+          </p>
+
+          <div class="hero-actions">
+            <button class="primary-button" id="addReminderBtn">Add reminder</button>
+            <button class="secondary-button" id="resetChecklistBtn">Reset checklist</button>
+          </div>
         </div>
-      </header>
 
-      <main class="dashboard">
-        <section class="hero card">
-          <div>
-            <p class="label">Today</p>
-            <h2 id="dateText">Loading...</h2>
-            <p id="timeText" class="time-text"></p>
+        <div class="hero-panel">
+          <div class="panel-top">
+            <div>
+              <span class="mini-label">Today</span>
+              <h3 id="dateText">Loading date...</h3>
+            </div>
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              Ready
+            </div>
           </div>
-          <button class="primary-btn" id="quickActionBtn">Add quick reminder</button>
-        </section>
 
-        <section class="stats-grid">
-          <article class="card stat">
-            <p>Urgent tasks</p>
-            <strong id="taskCount">3</strong>
-          </article>
-          <article class="card stat">
-            <p>Checklist done</p>
-            <strong id="checkDoneCount">2/5</strong>
-          </article>
-          <article class="card stat">
-            <p>Safety score</p>
-            <strong>86%</strong>
-          </article>
-        </section>
+          <div class="clock-box">
+            <p class="clock-label">Current time</p>
+            <div id="timeText" class="time-value">00:00:00</div>
+          </div>
 
-        <section class="content-grid">
-          <article class="card panel">
-            <div class="section-title">
+          <div class="tiny-stats">
+            <div>
+              <span>Safety score</span>
+              <strong>86%</strong>
+            </div>
+            <div>
+              <span>Tasks</span>
+              <strong id="taskCounter">3</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="card stat-card">
+          <span class="stat-label">Urgent tasks</span>
+          <strong id="urgentTaskCount">3</strong>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-label">Checklist done</span>
+          <strong id="checkDoneText">2/5</strong>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-label">Emergency mode</span>
+          <strong>Active</strong>
+        </article>
+      </section>
+
+      <section class="content-grid" id="checklist">
+        <article class="card panel">
+          <div class="section-heading">
+            <div>
+              <span class="mini-label">Before you rush</span>
               <h3>Priority checklist</h3>
-              <span>Before you rush</span>
             </div>
-            <ul class="checklist" id="checklist">
-              <li><input type="checkbox" checked /> Phone battery charged</li>
-              <li><input type="checkbox" checked /> Emergency contact saved</li>
-              <li><input type="checkbox" /> Documents ready</li>
-              <li><input type="checkbox" /> Water and essentials packed</li>
-              <li><input type="checkbox" /> Transport plan confirmed</li>
-            </ul>
-          </article>
+            <span class="muted-text">Stay sharp</span>
+          </div>
 
-          <article class="card panel">
-            <div class="section-title">
+          <ul class="checklist" id="checklistList">
+            <li>
+              <label><input type="checkbox" checked /> Phone battery charged</label>
+            </li>
+            <li>
+              <label><input type="checkbox" checked /> Emergency contact saved</label>
+            </li>
+            <li>
+              <label><input type="checkbox" /> Documents ready</label>
+            </li>
+            <li>
+              <label><input type="checkbox" /> Water and essentials packed</label>
+            </li>
+            <li>
+              <label><input type="checkbox" /> Transport plan confirmed</label>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card panel" id="priority">
+          <div class="section-heading">
+            <div>
+              <span class="mini-label">Immediate action</span>
               <h3>Quick actions</h3>
-              <span>Important tasks</span>
             </div>
-            <div class="task-list" id="taskList">
-              <div class="task-item">
-                <div>
-                  <h4>Call family</h4>
-                  <p>Confirm location and status</p>
-                </div>
-                <span class="tag urgent">Urgent</span>
-              </div>
-              <div class="task-item">
-                <div>
-                  <h4>Pack essentials</h4>
-                  <p>Travel kit and documents</p>
-                </div>
-                <span class="tag warning">Soon</span>
-              </div>
-              <div class="task-item">
-                <div>
-                  <h4>Review plan</h4>
-                  <p>Check timings and routes</p>
-                </div>
-                <span class="tag normal">Normal</span>
-              </div>
-            </div>
-          </article>
-        </section>
+            <span class="muted-text">Important</span>
+          </div>
 
-        <section class="card countdown-panel">
-          <div class="section-title">
+          <div class="task-list" id="taskList">
+            <div class="task-item">
+              <div>
+                <h4>Call family</h4>
+                <p>Confirm location and status</p>
+              </div>
+              <span class="tag urgent">Urgent</span>
+            </div>
+
+            <div class="task-item">
+              <div>
+                <h4>Pack essentials</h4>
+                <p>Travel kit and documents</p>
+              </div>
+              <span class="tag warning">Soon</span>
+            </div>
+
+            <div class="task-item">
+              <div>
+                <h4>Review plan</h4>
+                <p>Check routes and timings</p>
+              </div>
+              <span class="tag normal">Normal</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card countdown-section">
+        <div class="section-heading">
+          <div>
+            <span class="mini-label">Time-sensitive</span>
             <h3>Countdowns</h3>
-            <span>Time-sensitive reminders</span>
           </div>
-          <div class="countdown-grid">
-            <div class="countdown-box">
-              <span class="value">02</span>
-              <span class="label">Hours</span>
-            </div>
-            <div class="countdown-box">
-              <span class="value">18</span>
-              <span class="label">Minutes</span>
-            </div>
-            <div class="countdown-box">
-              <span class="value">45</span>
-              <span class="label">Seconds</span>
+          <span class="muted-text">Track your next move</span>
+        </div>
+
+        <div class="countdown-grid">
+          <div class="countdown-box">
+            <span class="value" id="hoursValue">02</span>
+            <span class="count-label">Hours</span>
+          </div>
+          <div class="countdown-box">
+            <span class="value" id="minutesValue">18</span>
+            <span class="count-label">Minutes</span>
+          </div>
+          <div class="countdown-box">
+            <span class="value" id="secondsValue">45</span>
+            <span class="count-label">Seconds</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-grid" id="contacts">
+        <article class="card contact-card">
+          <div class="section-heading compact">
+            <div>
+              <span class="mini-label">Support</span>
+              <h3>Emergency contacts</h3>
             </div>
           </div>
-        </section>
-      </main>
-    </div>
+
+          <ul class="contact-list">
+            <li><span>Family</span><strong>+1 (555) 012-2211</strong></li>
+            <li><span>Doctor</span><strong>+1 (555) 343-6000</strong></li>
+            <li><span>Local support</span><strong>+1 (555) 914-8888</strong></li>
+          </ul>
+        </article>
+
+        <article class="card contact-card">
+          <div class="section-heading compact">
+            <div>
+              <span class="mini-label">Resources</span>
+              <h3>Quick essentials</h3>
+            </div>
+          </div>
+
+          <div class="resource-list">
+            <div class="resource-item">
+              <span>Medical kit</span>
+              <strong>Ready</strong>
+            </div>
+            <div class="resource-item">
+              <span>Documents</span>
+              <strong>Sorted</strong>
+            </div>
+            <div class="resource-item">
+              <span>Emergency cash</span>
+              <strong>Stored</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
 
     <script src="app.js"></script>
   </body>
 </html>
+
